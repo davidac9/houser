@@ -15,6 +15,7 @@ app.use(express.json())
 // }))
 
 app.get('/api/houses', ctrl.getAllHouses)
+app.delete('/api/houses/:house_id', ctrl.deleteHouse)
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db)

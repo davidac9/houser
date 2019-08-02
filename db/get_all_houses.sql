@@ -1,1 +1,1 @@
-SELECT * FROM houses
+SELECT * FROM houses;
