@@ -8,7 +8,7 @@ export default class House extends Component {
                 <p>{this.props.data.city}</p>
                 <p>{this.props.data.address}</p>
                 <p>{this.props.data.zip_code}</p>
-                <button>delete</button>
+                <button onClick={() => this.props.deleteFn(this.props.id)}>delete</button>
             </div>
         )
     }
