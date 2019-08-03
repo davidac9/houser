@@ -35,17 +35,18 @@ export default class Dashboard extends Component {
 
     render() {
         return(
-            <div>
+            <div onClick={() => this.componentDidMount()}>
                 Dashboard
-                {this.state.houses.map(el =>(
+                {this.state.houses.map((el, i) =>(
                     <House 
-                    key={el.id}
+                    key={i}
+                    // key={el.id}
                     id={el.house_id}
                     data={el}
                     deleteFn={this.deleteHouse}
                     />
                 ))}
-                <Link to='/wizard'>
+                <Link to='/wizard' getHouses={this.getAllHouses}>
                     Add New Property
                 </Link>
             </div>

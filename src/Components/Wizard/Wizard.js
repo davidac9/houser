@@ -9,7 +9,7 @@ export default class Wizard extends Component {
             name: '',
             address: '',
             city: '',
-            zipcode: ''
+            zip_code: 0
         }
     }
     handleChangeName(e) {
@@ -29,12 +29,23 @@ export default class Wizard extends Component {
     }
     handleChangeZip(e) {
         this.setState({
-            zipcode: e.target.value
+            zip_code: e.target.value
         })
     }
-    newHouse(name, address, city, zipcode) {
+    
+    newHouse() {
+        const body = {
+            name: this.state.name,
+            address: this.state.address,
+            city: this.state.city,
+            zip_code: this.state.zip_code
+        }
         axios
-            .post('/api/houses', )
+            .post('/api/houses', body ).then(() => {
+                // console.log(res)
+            })
+            .catch(err => console.log(err, "couldn't add house oops"))
+            // this.props.history.goBack()
     }
     render(){
         return(
@@ -48,6 +59,9 @@ export default class Wizard extends Component {
                 <input type='text' onChange={e => this.handleChangeCity(e)} />
                 zipcode
                 <input type='text' onChange={e => this.handleChangeZip(e)} />
+                <Link to='/'>
+                    <button onClick={() => this.newHouse()}>add</button>
+                </Link>
                 <Link to='/'>
                     Cancel
                 </Link>
