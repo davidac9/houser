@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+import axios from 'axios';
 
 export default class Wizard extends Component {
     constructor() {
@@ -30,6 +31,10 @@ export default class Wizard extends Component {
         this.setState({
             zipcode: e.target.value
         })
+    }
+    newHouse(name, address, city, zipcode) {
+        axios
+            .post('/api/houses', )
     }
     render(){
         return(
