@@ -68,23 +68,32 @@ export default class Step3 extends Component {
 
     render(){
         return(
-            <div>
-                Wizard
-                <p>Recommended Monthly Rent ${this.state.mortgage * 1.25}</p>
-                Monthly Mortgage Amount $
-                <input type='text' value={this.state.mortgage} onChange={e => this.handleChangeMortgage(e)}/>
-                Desired Monthly Rent $
-                <input type='text' value={this.state.rent} onChange={e => this.handleChangeRent(e)}/>
+            <div className="dash">
+                <div className="container">
+                    <div className="guide">
+                        <h1>
+                            Add New Listing
+                        </h1>
+                    
+                        <Link to='/'>
+                            <button className="cancel" onClick={() => this.clearInputs()}>Cancel</button>
+                        </Link>
+                    </div>
+                    <hr/>
 
-                <Link to='/wizard/step2'>
-                    <button onClick={() => this.saveChanges()} >Previous</button>
-                </Link>
-                <Link to='/'>
-                    <button onClick={() => this.createHouse()} >Create</button>
-                </Link>
-                <Link to='/'>
-                    <button onClick={() =>this.clearInputs()} >Cancel</button>
-                </Link>
+                    <p>Recommended Monthly Rent ${this.state.mortgage * 1.25}</p>
+                    Monthly Mortgage Amount $
+                    <input type='text' value={this.state.mortgage} onChange={e => this.handleChangeMortgage(e)}/>
+                    Desired Monthly Rent $
+                    <input type='text' value={this.state.rent} onChange={e => this.handleChangeRent(e)}/>
+
+                    <Link to='/wizard/step2'>
+                    <button className="next-step" onClick={() => this.saveChanges()} >Previous</button>
+                    </Link>
+                    <Link to='/'>
+                    <button className="next-step" onClick={() => this.createHouse()} >Create</button>
+                    </Link>
+                </div>
             </div>
         )
     }

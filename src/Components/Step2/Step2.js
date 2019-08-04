@@ -32,21 +32,29 @@ export default class Step2 extends Component {
 
     render(){
         return(
-            <div>
-                Wizard
-                Image URL
+            <div className="dash">
+                <div className="container">
+                    <div className="guide">
+                        <h1>
+                            Add New Listing
+                        </h1>
+                    
+                        <Link to='/'>
+                            <button className="cancel" onClick={() => this.clearInputs()}>Cancel</button>
+                        </Link>
+                    </div>
+                    <hr/>
+                    Image URL
                 <input type='text' value={this.state.image} onChange={e => this.handleChangeImage(e)}/>
-
+                
                 <Link to='/wizard/step1'>
-                    <button onClick={() => this.saveChanges()} >Previous</button>
+                <button className="next-step" onClick={() => this.saveChanges()} >Previous</button>
                 </Link>
-
+                
                 <Link to='/wizard/step3'>
-                    <button onClick={() => this.saveChanges()} >Next</button>
+                <button className="next-step" onClick={() => this.saveChanges()} >Next</button>
                 </Link>
-                <Link to='/'>
-                    <button onClick={() => this.clearInputs()} >Cancel</button>
-                </Link>
+                </div>
             </div>
         )
     }

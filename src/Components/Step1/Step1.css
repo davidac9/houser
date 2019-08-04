@@ -1,0 +1,20 @@
+.next-step {
+    border: none;
+    background-color: #77b6ea;
+    font-size: 20px;
+    height: 30px;
+    margin-top: 20px
+}
+.next-step:hover {
+    box-shadow: 0 0 8px 5px #77b6ea65
+}
+.cancel {
+    margin-right: 25px;
+    border: none;
+    background-color: #d6c9c9;
+    font-size: 20px;
+    height: 30px;
+}
+.cancel:hover {
+    box-shadow: 0 0 8px 5px #d6c9c975
+}

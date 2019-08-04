@@ -1,0 +1,47 @@
+.dash {
+    background-color: #77b6ea;
+    height: Calc(100% - 60px);
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background-color: #e8eef2;
+    width: 900px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center
+
+}
+
+.guide {
+    width: 100%;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: baseline;
+	align-content: stretch;
+}
+h1 {
+    padding-left: 25px;
+}
+
+.new-house {
+    margin-right: 25px;
+    border: none;
+    background-color: #77b6ea;
+    font-size: 20px;
+    height: 30px;
+}
+.new-house:hover {
+    box-shadow: 0 0 8px 5px #77b6ea65
+}
+hr {
+    color: black;
+    background-color: black;
+    height: 1px;
+    width: 95%
+}

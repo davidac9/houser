@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import House from '../House/House'
 import {Link } from 'react-router-dom'
 import axios from 'axios'
+import './Dashboard.css'
 
 export default class Dashboard extends Component {
     constructor(){
@@ -35,22 +36,27 @@ export default class Dashboard extends Component {
 
     render() {
         return(
-            <div onClick={() => this.componentDidMount()}>
-                Dashboard
-                {this.state.houses.map((el, i) =>(
-                    <House 
-                    key={i}
-                    // key={el.id}
-                    id={el.house_id}
-                    data={el}
-                    deleteFn={this.deleteHouse}
-                    />
-                ))}
-                <Link to='/wizard/step1'
-                //  getHouses={this.getAllHouses}
-                 >
-                    Add New Property
-                </Link>
+            <div className="dash" onClick={() => this.componentDidMount()}>
+                <div className="container">
+                    <div className="guide">
+                        <h1>
+                            Dashboard
+                        </h1>
+                        <Link to='/wizard/step1'>
+                            <button className="new-house">Add New Property</button>
+                        </Link>
+                    </div>
+                    <hr/>
+                    {this.state.houses.map((el, i) =>(
+                        <House
+                        key={i}
+                        // key={el.id}
+                        id={el.house_id}
+                        data={el}
+                        deleteFn={this.deleteHouse}
+                        />
+                    ))}
+                </div>
             </div>
         )
     }

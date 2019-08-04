@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 // import axios from 'axios';
 import store, { NEW_NAME, NEW_ADDRESS, NEW_CITY, NEW_ZIP, NEW_HOUSE_STATE, CLEAR_INPUTS } from './../../store.js'; 
+import './Step1.css'
 
 export default class Step1 extends Component {
     constructor(props) {
@@ -110,27 +111,35 @@ export default class Step1 extends Component {
     // }
     render(){
         return(
-            <div>
-                Wizard
-                name
-                <input type='text' value={this.state.name} onChange={e => this.handleChangeName(e)}/>
-                address
-                <input type='text' value={this.state.address} onChange={e => this.handleChangeAddress(e)} />
-                city
-                <input type='text' value={this.state.city} onChange={e => this.handleChangeCity(e)} />
-                zipcode
-                <input type='text' value={this.state.zip_code} onChange={e => this.handleChangeZip(e)} />
-                State
-                <input type='text' maxlength='2' value={this.state.houseState} onChange={e => this.handleChangeHouseState(e)} />
-                
-                <Link to='/wizard/step2'>
-                <button onClick={() => this.saveChanges()}>Next</button>
-                </Link>
-
-                <Link to='/'>
-                    <button onClick={() => this.clearInputs()}>Cancel</button>
-                </Link>
+            <div className="dash">
+                <div className="container">
+                <div className="guide">
+                        <h1>
+                            Add New Listing
+                        </h1>
+                    
+                        <Link to='/'>
+                            <button className="cancel" onClick={() => this.clearInputs()}>Cancel</button>
+                        </Link>
+                    </div>
+                    <hr/>
+                    Property Name
+                    <input type='text' value={this.state.name} onChange={e => this.handleChangeName(e)}/>
+                    Address
+                    <input type='text' value={this.state.address} onChange={e => this.handleChangeAddress(e)} />
+                    City
+                    <input type='text' value={this.state.city} onChange={e => this.handleChangeCity(e)} />
+                    Zipcode
+                    <input type='text' value={this.state.zip_code} onChange={e => this.handleChangeZip(e)} />
+                    State
+                    <input type='text' maxlength='2' value={this.state.houseState} onChange={e => this.handleChangeHouseState(e)} />
+                    
+                        <Link to='/wizard/step2'>
+                            <button className="next-step" onClick={() => this.saveChanges()}>Next</button>
+                        </Link>
+                </div>
             </div>
+
         )
     }
 }
