@@ -46,7 +46,9 @@ export default class Dashboard extends Component {
                     deleteFn={this.deleteHouse}
                     />
                 ))}
-                <Link to='/wizard' getHouses={this.getAllHouses}>
+                <Link to='/wizard/step1'
+                //  getHouses={this.getAllHouses}
+                 >
                     Add New Property
                 </Link>
             </div>

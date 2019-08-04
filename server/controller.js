@@ -13,7 +13,7 @@ module.exports ={
     newHouse: async (req, res) => {
         const db = req.app.get('db')
         console.log(req.body)
-        const newHouse = await db.new_house(req.body.name, req.body.address, req.body.city, req.body.zip_code)
+        const newHouse = await db.new_house(req.body.name, req.body.address, req.body.city, req.body.zip_code, req.body.image, req.body.monthly_mortgage, req.body.rent, req.body.state)
         return res.status(200).send(newHouse)
     }
 }

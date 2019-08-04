@@ -1,0 +1,43 @@
+.houses {
+    background-color: #c7d3dd;
+    display: flex;
+    width: 850px;
+    height: 200px;
+    margin-top: 10px;
+    position: relative;
+}
+
+img {
+    max-width: 200px;
+    max-height: 200px;
+    padding: 10px;
+}
+
+.delete {
+    height: 30px;
+    /* width: 20px; */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #d6c9c9;
+    border: none;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.delete:hover {
+    box-shadow: 0 0 8px 5px rgba(180, 108, 108, 0.685)
+
+}
+
+.info {
+    /* display: flex;
+    flex-direction: column; */
+    /* justify-content: center */
+    line-height: 10px;
+}
+
+.price {
+    line-height: 10px;
+    padding-left: 20px;
+}
