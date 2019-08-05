@@ -64,10 +64,11 @@ export default class Wizard extends Component {
     //         city: this.state.city,
     //         zip_code: this.state.zip_code
     //     }
-        // axios
-        //     .post('/api/houses', body ).then(() => {
-        //     })
-        //     .catch(err => console.log(err, "couldn't add house oops"))
+    //     axios
+    //         .post('/api/houses', body ).then(() => {
+
+    //         })
+    //         .catch(err => console.log(err, "couldn't add house oops"))
     // }
     render(){
         return(
