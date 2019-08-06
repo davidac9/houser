@@ -69,14 +69,19 @@ export default class Step1 extends Component {
             type: CLEAR_INPUTS
         })
     }
-    // componentDidMount() {
-    //     store.subscribe(() => {
-    //         const reduxState = store.getState()
-    //         this.setState({
-                
-    //         })
-    //     })
-    // }
+
+    componentDidMount() {
+        store.subscribe(() => {
+            const reduxState = store.getState()
+            this.setState({
+                name: reduxState.name,
+                address: reduxState.address,
+                city: reduxState.city,
+                zip_code: reduxState.zip_code,
+                houseState: reduxState.houseState
+            })
+        })
+    }
 
     // newHouse() {
     //     store.dispatch({

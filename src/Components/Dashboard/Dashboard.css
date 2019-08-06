@@ -1,14 +1,19 @@
 .dash {
+    height: Calc(100% - 60);
+    overflow: auto;
     background-color: #77b6ea;
-    height: Calc(100% - 60px);
+    /* height: Calc(100% - 60px); */
     display: flex;
     justify-content: center;
+    position: sticky;
+    top: 0;
 }
 
 .container {
     background-color: #e8eef2;
     width: 900px;
     height: 100%;
+    overflow: auto;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;

@@ -30,6 +30,15 @@ export default class Step2 extends Component {
         })
     }
 
+    componentDidMount() {
+        store.subscribe(() => {
+            const reduxState = store.getState()
+            this.setState({
+                image: reduxState.image
+            })
+        })
+    }
+
     render(){
         return(
             <div className="dash">

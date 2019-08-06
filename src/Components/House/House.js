@@ -19,8 +19,8 @@ export default class House extends Component {
                 <p>Zip: {this.props.data.zip_code}</p>
                 </div>
                 <div className="price">
-                    <p>Monthly Mortgage: ${this.props.data.monthly_mortgage}</p>
-                    <p>Monthly Rent: ${this.props.data.rent}</p>
+                    <p>Monthly Mortgage: ${this.props.data.monthly_mortgage / 100}</p>
+                    <p>Monthly Rent: ${this.props.data.rent / 100}</p>
                 </div>
                 <button className="delete" onClick={() => this.props.deleteFn(this.props.id)}>Remove</button>
             </div>

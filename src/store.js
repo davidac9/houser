@@ -10,13 +10,15 @@ const initialState = {
     mortgage: 0,
     rent: 0
 }
-
-export const NEW_NAME = "STEP_ONE"
+// step 1
+export const NEW_NAME = "NEW_NAME"
 export const NEW_ADDRESS = "NEW_ADDRESS"
 export const NEW_CITY = "NEW_CITY"
 export const NEW_ZIP = "NEW_ZIP"
 export const NEW_HOUSE_STATE = "NEW_HOUSE_STATE"
+// Step 2
 export const NEW_IMAGE = "NEW_IMAGE"
+// Step 3
 export const NEW_MORTGAGE = "NEW_MORTGAGE"
 export const NEW_RENT = "NEW_RENT"
 export const CLEAR_INPUTS = "CLEAR_INPUTS"
@@ -24,6 +26,7 @@ export const CLEAR_INPUTS = "CLEAR_INPUTS"
 function reducer(state = initialState, action) {
     const {type, payload} = action
     switch(type) {
+        // Step 1
         case NEW_NAME:
             return {...state, 
                 name: payload
@@ -44,10 +47,12 @@ function reducer(state = initialState, action) {
             return {...state, 
                 houseState: payload
             }
+            // Step 2
         case NEW_IMAGE:
             return {...state,
                 image: payload    
             }
+            // Step 3
         case NEW_MORTGAGE:
             return {...state,
                 mortgage: payload
@@ -56,18 +61,6 @@ function reducer(state = initialState, action) {
             return {...state,
                 rent: payload
             }
-        // case CREATE_HOUSE:
-        //     const {
-        //         name,
-        //         address,
-        //         city,
-        //         zip_code,
-        //         houseState,
-        //         image,
-        //         mortgage,
-        //         rent
-        //     } = state
-        //     const house = 
         case CLEAR_INPUTS:
             return {...state,
                 name:'',

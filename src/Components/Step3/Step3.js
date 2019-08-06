@@ -40,12 +40,15 @@ export default class Step3 extends Component {
             type: CLEAR_INPUTS
         })
     }
-    // componentDidMount() {
-    //     store.subscribe(() => {
-    //         const reduxState = store.getState()
-    //         this.setState({})
-    //     })
-    // }
+    componentDidMount() {
+        store.subscribe(() => {
+            const reduxState = store.getState()
+            this.setState({
+                mortgage: reduxState.mortgage,
+                rent: reduxState.rent
+            })
+        })
+    }
     createHouse() {
         const reduxState = store.getState()
         
@@ -55,13 +58,11 @@ export default class Step3 extends Component {
             city: reduxState.city,
             zip_code: reduxState.zip_code,
             image: reduxState.image,
-            monthly_mortgage: this.state.mortgage,
-            rent: this.state.rent,
+            monthly_mortgage: this.state.mortgage * 100,
+            rent: this.state.rent * 100,
             state: reduxState.houseState,
         }
-        // console.log(body)
         axios.post('/api/houses', body ).then(() => {
-            console.log(body)
             }).catch(err => console.log(err, "couldn't add house oops"))
             this.clearInputs()
     }
